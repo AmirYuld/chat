@@ -1,0 +1,16 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
+.chatList{
+    max-width: 300px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: $lightGrey;
+
+    .listEmpty{
+        text-align: center;
+    }
+}
+

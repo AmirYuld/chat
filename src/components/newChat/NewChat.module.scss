@@ -1,0 +1,71 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
+
+.newChat{
+    position: relative;
+    @include flex(column, start, center, no-wrap, 0, 0);
+    padding-top: 30px;
+}
+
+.button{
+    position: relative;
+    @include size(120px, 40px);
+    background: $blue;
+    color: $white;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 101;
+
+    i{
+        display: block;
+        visibility: hidden;
+        content: "+";
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        font-size: 1.4rem;
+        transform: translateX(-20px);
+        transition: all 0.3s;
+    }
+
+    &:hover > i{
+        transform: translateX(0px);
+        visibility: visible;
+    }
+
+    &:hover{
+        padding-right: 15px;
+    }
+
+}
+
+.hide{
+    i{
+        display: none;
+    }
+
+    &:hover{
+        padding: 0;
+    }
+}
+
+.availableChatList{
+    position: absolute;
+    visibility: hidden;
+    transform: translateX(-300px);
+    @include size(100%, 100%);
+    top: 0px;
+    padding-top: 90px;
+    transition: transform 0.3s ease-out;
+}
+
+.active{
+    transform: translateX(0);
+    visibility: visible;
+    z-index: 100;
+}
+
